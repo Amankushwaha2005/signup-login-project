@@ -15,7 +15,7 @@
     <input type="password" placeholder="Password" id="password" required><br><br>
     <div class="password-box">
   <input type="password" placeholder="Password" id="password" required>
-  <span class="toggle-password" onclick="togglePassword()">👁️</span>
+  <span class="toggle-password" id="togglePassword()">👁️</span>
 </div>
 <br>
     <button type="submit">Signup</button><br>
@@ -29,11 +29,17 @@
     document.getElementById("signupForm").addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      function  togglePassword(){
-        const password = document.getElementById("password");
-         password.type = password.type ==="password" ? "text":"password";
-        
-      }
+      const toggle = document.getElementById("togglePassword");
+const passwordInput = document.getElementById("password");
+toggle.addEventListener("click", () => {
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    toggle.textContent = "🙈";
+  } else {
+    passwordInput.type = "password";
+    toggle.textContent = "👁️";
+  }
+});
 
       const name = document.getElementById("name");
        const email = document.getElementById("email");
