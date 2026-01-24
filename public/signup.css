@@ -1,33 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  display: flex ;
+  min-height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  padding: 15px;
 }
 
+/* Signup card */
 .container {
-  text-align: center;
-  border: 2px solid #333;
+  width: 100%;
+  max-width: 360px;
+  background: #f3cce9;
   padding: 25px;
-  border-radius: 10px;
-  background-color: #ffe6f0;
+  border-radius: 12px;
+  text-align: center;
 }
 
-input {
-  display: red;
-  margin: 4px auto;
-  padding: 8px;
-  width: 220px;
-  border: 2px solid #4444;
-  border-radius: 60px;
-  outline: none;
+/* Inputs */
+.container input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 20px;
+  border: 1px solid #ccc;
 }
 
-button {
-  padding: 8px 20px;
+/* Button */
+.container button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  border: 2px solid #444;
-  border-radius: 6px;
-  background-color: #e0ffe0;
+}
+@media (max-width: 480px) {
+  .container{
+
+padding: 20px;
+  }
 }
