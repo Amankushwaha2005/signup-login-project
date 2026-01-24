@@ -14,7 +14,6 @@
     <input type="email" placeholder="Email" id="email" required><br><br>
     <input type="password" placeholder="Password" id="password" required><br><br>
     <div class="password-box">
-      <input type="password" placeholder="password" id="password" required>
       <span class="togglePassword()" onclick="togglePassword()"></span>
     </div><br>
     <button type="submit">Signup</button><br>
@@ -30,11 +29,8 @@
 
       function  togglePassword(){
         const password = document.getElementById("password");
-        if( password.type === "password");{
-          password.type = "text";
-        }else{
-          password.type = "password";
-        }
+         password.type = password.type ==="password" ? "text":"password";
+          password.type = "text"
       }
 
       const name = document.getElementById("name");
