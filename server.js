@@ -10,9 +10,8 @@ app.use(express.static("public"));
 
 // MongoDB connection
 mongoose.connect(
-  "mongodb://admin:F0OwEp7dkmiswU80@SG-sunset-durian-2503-77986.servers.mongodirector.com:27017/signupDB",
+  "mongodb://admin:E6fSoxqMWBUtrech@SG-ginger-dream-6316-78094.servers.mongodirector.com:27017/signupDB?authSource=admin&tls=true&tlsInsecure=true",
   {
-    authSource: "admin",
     ssl: true,
     tlsInsecure: true
   }
@@ -20,6 +19,7 @@ mongoose.connect(
 )
 .then(() => {
   console.log("MongoDB connected ✅");
+  console.log("Connected DB name:", mongoose.connection.name);
 })
 .catch((err) => {
   console.log("MongoDB error ❌", err.message);
