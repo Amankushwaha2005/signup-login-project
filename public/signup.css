@@ -16,11 +16,12 @@ body {
 /* Signup card */
 .container {
   width: 100%;
-  max-width: 360px;
+  max-width: 420px;
   background: #f3cce9;
   padding: 25px;
   border-radius: 12px;
   text-align: center;
+ box-sizing: border-box;
 }
 
 /* Inputs */
@@ -40,9 +41,12 @@ body {
   border-radius: 8px;
   cursor: pointer;
 }
+/* mobile*/
 @media (max-width: 480px) {
   .container{
-
+width: 92%;
+max-width: 92%;
+transform: none;
 padding: 20px;
   }
 }
