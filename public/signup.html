@@ -13,6 +13,10 @@
     <input type="text" placeholder="Name" id="name" required><br><br>
     <input type="email" placeholder="Email" id="email" required><br><br>
     <input type="password" placeholder="Password" id="password" required><br><br>
+    <div class="password-box">
+      <input type="password" placeholder="password" id="password" required>
+      <span class="togglePassword()"></span>
+    </div><br>
     <button type="submit">Signup</button><br>
     <p class="login-html">
       Already have an account?
@@ -23,6 +27,15 @@
   <script>
     document.getElementById("signupForm").addEventListener("submit", async (e) => {
       e.preventDefault();
+      function  togglePassword(){
+        const password = document.getElementById("password");
+        if( password.type === "password");{
+          password.type = "text";
+        }else{
+          password.type = "password";
+        }
+      }
+
       const name = document.getElementById("name");
        const email = document.getElementById("email");
         const password = document.getElementById("password");
