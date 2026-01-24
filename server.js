@@ -28,6 +28,9 @@ mongoose.connect(
 // Routes
 const authRoutes = require("./routes/auth");
 app.use(authRoutes);
+app.get("/", (req, res) =>{
+  res.sendFile(__dirname + "/public/signup.html");
+});
 
 // Server
 app.listen(3000, () => {
