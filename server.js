@@ -10,7 +10,7 @@ app.use(express.static("public"));
 
 // MongoDB connection
 mongoose.connect(
-  "mongodb://admin:E6fSoxqMWBUtrech@SG-ginger-dream-6316-78094.servers.mongodirector.com:27017/signupDB?authSource=admin&tls=true&tlsInsecure=true",
+ "mongodb+srv://Amankushwaha:Aman%25402005@cluster0.70ia04k.mongodb.net/",
   {
     ssl: true,
     tlsInsecure: true
