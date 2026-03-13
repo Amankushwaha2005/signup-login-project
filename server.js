@@ -34,8 +34,12 @@ app.get("/", (req, res) =>{
 // Admin: get all users
 const User = require("./models/User");
 app.get("/admin/user", async (req, res)=> {
+  try {
   const users = await User.find();
   res.json(users);
+  }catch (err) {
+    res.status(500).json({message:"Server error"});
+  }
 });
 //Admin: delete user
 app.delete("/admin/user/:id", async (req,res) => {
