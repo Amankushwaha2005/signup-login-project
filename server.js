@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-
+const User = require("./models/User");
 const app = express();
 
 // Middleware
@@ -31,7 +31,17 @@ app.use(authRoutes);
 app.get("/", (req, res) =>{
   res.sendFile(__dirname + "/public/signup.html");
 });
-
+// Admin: get all users
+app.get("/admin/user", async (req, res)=> {
+  const users = await User.find();
+  res.json(users);
+});
+//Admin: delet user
+app.delete("/admin/user/:id", async (req,res) => {
+  await
+  User.findByIdAndDelete(req.params.id);
+  res.json({message: "User deleted "});
+});
 // Server
 app.listen(3000, () => {
   console.log("Server running on http://localhost:3000");

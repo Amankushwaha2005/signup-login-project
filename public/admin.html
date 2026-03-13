@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+</head>
+
+<body>
+
+<h2>Users List</h2>
+
+<table border="1">
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+</tr>
+</thead>
+
+<tbody id="users"></tbody>
+
+</table>
+
+<script>
+
+async function loadUsers(){
+
+const res = await fetch("/admin/users");
+const users = await res.json();
+
+let html="";
+
+users.forEach(user=>{
+html += `
+<tr>
+<td>${user.name}</td>
+<td>${user.email}</td>
+</tr>
+`;
+});
+
+document.getElementById("users").innerHTML = html;
+
+}
+
+loadUsers();
+
+</script>
+
+</body>
+</html>
