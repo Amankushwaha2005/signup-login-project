@@ -24,7 +24,8 @@
 
 async function loadUsers(){
 
-const res = await fetch("/admin/users");
+const res = await
+ fetch("https://signup-login-project-1.onrender.com/admin/users");
 const users = await res.json();
 
 let html="";
