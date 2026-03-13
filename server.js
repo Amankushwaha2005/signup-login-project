@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const User = require("./models/User");
+
 const app = express();
 
 // Middleware
@@ -37,7 +37,7 @@ app.get("/admin/user", async (req, res)=> {
   const users = await User.find();
   res.json(users);
 });
-//Admin: delet user
+//Admin: delete user
 app.delete("/admin/user/:id", async (req,res) => {
   await
   User.findByIdAndDelete(req.params.id);
