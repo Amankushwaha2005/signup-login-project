@@ -35,7 +35,7 @@ app.get("/", (req, res) =>{
 const User = require("./models/User");
 app.get("/admin/user", async (req, res)=> {
   try {
-  const users = await User.find();
+  const users = await User.find().Sort({ _id: -1 });
   res.json(users);
   }catch (err) {
     res.status(500).json({message:"Server error"});
