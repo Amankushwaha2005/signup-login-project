@@ -32,6 +32,7 @@ app.get("/", (req, res) =>{
   res.sendFile(__dirname + "/public/signup.html");
 });
 // Admin: get all users
+const User = require("./models/User");
 app.get("/admin/user", async (req, res)=> {
   const users = await User.find();
   res.json(users);
